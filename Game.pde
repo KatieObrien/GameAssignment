@@ -26,6 +26,20 @@ void setup()
 
 float x1 = -650, x2 = -380, x3 = -100;
 
+void keyPressed()
+{
+  keys[keyCode] = true;
+}
+boolean checkKey(int k)
+{
+  if (keys.length >= k)
+  {
+    return keys[k] || keys[Character.toUpperCase(k)];
+  }
+  return false;
+  
+}
+
 void draw()
 {
   background(139,201,250);
@@ -57,5 +71,6 @@ void draw()
     //stroke(0);
     text("Press space key to start",260,250);
   }
+  if 
 
 }
