@@ -1,5 +1,5 @@
 PShape car;
-PShape c;
+//PShape c;
 
 void setup()
 {
@@ -9,17 +9,18 @@ void setup()
   car.fill(255,7,3);
   car.noStroke();
   car.vertex(170, 280);
-  car.vertex(170, 420);
-  car.vertex(630, 420);
+  car.vertex(170, 400);
+  car.vertex(630, 400);
   car.vertex(630, 280);
   car.vertex(550, 280);
   car.vertex(550, 190);
   car.vertex(250, 190);
   car.vertex(250, 280);
   car.endShape(CLOSE);
+  
 }
 
-float x1 = -430,x2 = -480,x3 = -100, x4 = -380, x5 = -100;
+float x1 = -650, x2 = -380, x3 = -100;
 
 void draw()
 {
@@ -35,18 +36,17 @@ void draw()
   noStroke();
   fill(0);
   
-  shape(car,0,0);
+  shape(car,x1,0);
   
-  ellipse(x4,390,80,80);
-  ellipse(x5,390,80,80);
- /*
+  ellipse(x2,390,80,80);
+  ellipse(x3,390,80,80);
+ 
   for(int i = 0; i <5; i++)
   {
     x1 = x1 + 1;
     x2 = x2 + 1;
     x3 = x3 + 1;
-    x4 = x4 + 1;
-    x5 = x5 + 1;
+    
   }
-*/
+
 }
