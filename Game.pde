@@ -46,7 +46,12 @@ void draw()
     x1 = x1 + 1;
     x2 = x2 + 1;
     x3 = x3 + 1;
-    
+  }
+  if (x1 >= 700)
+  {
+    fill(0);
+    //stroke(0);
+    text("Press space key to start",320,250);
   }
 
 }
