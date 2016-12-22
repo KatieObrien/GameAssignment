@@ -1,9 +1,13 @@
 PShape car;
-//PShape c;
+PFont font;
 
 void setup()
 {
   size(800,500);
+  
+  font = createFont("AlBayan-Bold-48.vlw",26);
+  textFont(font);
+  
   car = createShape();
   car.beginShape();
   car.fill(255,7,3);
@@ -51,7 +55,7 @@ void draw()
   {
     fill(0);
     //stroke(0);
-    text("Press space key to start",320,250);
+    text("Press space key to start",260,250);
   }
 
 }
