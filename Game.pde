@@ -1,5 +1,6 @@
 PShape car;
 PFont font;
+Car car
 
 void setup()
 {
@@ -26,7 +27,7 @@ void setup()
 
 float x1 = -650, x2 = -380, x3 = -100;
 
-void keyPressed()
+/*void keyPressed()
 {
   keys[keyCode] = true;
 }
@@ -39,6 +40,7 @@ boolean checkKey(int k)
   return false;
   
 }
+*/
 
 void draw()
 {
@@ -71,6 +73,6 @@ void draw()
     //stroke(0);
     text("Press space key to start",260,250);
   }
-  if 
+  //if 
 
 }
