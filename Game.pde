@@ -1,6 +1,6 @@
 PShape car;
 PFont font;
-Car car
+Car cars
 
 void setup()
 {

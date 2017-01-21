@@ -1,6 +1,6 @@
 class Car 
 {
-  car()
+  cars()
   {
     
   }
