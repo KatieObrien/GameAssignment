@@ -1,78 +1,67 @@
-PShape car;
-PFont font;
-Car cars
-
 void setup()
 {
-  size(800,500);
-  
-  font = createFont("AlBayan-Bold-48.vlw",26);
-  textFont(font);
-  
-  car = createShape();
-  car.beginShape();
-  car.fill(255,7,3);
-  car.noStroke();
-  car.vertex(170, 280);
-  car.vertex(170, 400);
-  car.vertex(630, 400);
-  car.vertex(630, 280);
-  car.vertex(550, 280);
-  car.vertex(550, 190);
-  car.vertex(250, 190);
-  car.vertex(250, 280);
-  car.endShape(CLOSE);
+  size(500,700);
   
 }
 
-float x1 = -650, x2 = -380, x3 = -100;
-
-/*void keyPressed()
-{
-  keys[keyCode] = true;
-}
-boolean checkKey(int k)
-{
-  if (keys.length >= k)
-  {
-    return keys[k] || keys[Character.toUpperCase(k)];
-  }
-  return false;
-  
-}
-*/
+float x = 210;
+float ex1 = 230;
+float ex2 = 280;
+float y1=600,y2=680;
+int score;
+int END = 150;
+int m = millis();
 
 void draw()
 {
   background(139,201,250);
-  fill(113,112,112);
-  rect(0,350,800,400);
-  fill(255);
-  rect(50,425,100,20);
-  rect(250,425,100,20);
-  rect(450,425,100,20);
-  rect(650,425,100,20);
-  
   noStroke();
-  fill(0);
+  fill(113,112,112);
+  rect(-20,600,530,700);
+  fill(255);
+  rect(240,y1,20,45);
+  rect(240,y2,20,45);
+  rect(10,600,20,120);
+  rect(470,600,20,120);
   
-  shape(car,x1,0);
+  fill(252,251,207);
+  ellipse(ex1,625,20,20);
+  ellipse(ex2,625,20,20);
+  fill(255,7,3);
+  rect(x,620,90,100);
   
-  ellipse(x2,390,80,80);
-  ellipse(x3,390,80,80);
+ if(mouseX <= 200)
+ {
+   x--;
+   ex1--;
+   ex2--;
+ }
  
-  for(int i = 0; i <5; i++)
-  {
-    x1 = x1 + 1;
-    x2 = x2 + 1;
-    x3 = x3 + 1;
-  }
-  if (x1 >= 700)
-  {
-    fill(0);
-    //stroke(0);
-    text("Press space key to start",260,250);
-  }
-  //if 
-
+ if(mouseX >= 300)
+ {
+   x++;
+   ex1++;
+   ex2++;
+ }
+ 
+   y1++;
+   y2++;
+   fill(139,201,250);
+  rect(-20,-10,600,530);
+   if(y1>=750)
+   {
+     y1 = 598;
+   }
+   if(y2 >= 750)
+   {
+     y2 = 598;
+   }
+   
+  
+  fill(255);
+ score += 1;
+ textSize(20);
+ text (score,450,20);
+  
+  
 }
