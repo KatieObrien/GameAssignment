@@ -1,3 +1,5 @@
+Blocks b1 = new Blocks();
+
 void setup()
 {
   size(500,700);
@@ -66,5 +68,5 @@ void draw()
   textSize(20);
   text (score,450,20);
   
-  
+  b1.blocks(20,-150);
 }
