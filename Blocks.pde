@@ -4,9 +4,6 @@ class Blocks
   
   Blocks(float x, float y)
   {
-    //fill(255,3,3);
-    //rect(x,y,200,100);
-    //move();
     xpos = x;
     ypos = y;
   }
