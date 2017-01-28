@@ -1,6 +1,7 @@
 class Car
 {
   float xpos;
+  int score;
   
   Car(float x)
   {
@@ -27,5 +28,18 @@ class Car
    {
      xpos = xpos + 3;
    }
+  }
+  void score()
+  {
+    //Score doesn't go up if car isn't on screen
+    if(xpos >=0 &&  xpos <= 480)
+    {
+      score += 1;
+    }
+    
+    //Score printed on screen
+    fill(255);
+    textSize(20);
+    text (score,450,20);
   }
 }
