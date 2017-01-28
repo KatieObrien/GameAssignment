@@ -11,8 +11,6 @@ float ex1 = 230;
 float ex2 = 280;
 float y1=600,y2=680;
 int score;
-//int END = 150;
-//int m = millis();
 
 void draw()
 {
