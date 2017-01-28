@@ -1,9 +1,19 @@
 class Blocks
 {
-  float x,y;
+  float xpos,ypos;
   
-  void blocks(float x, float y)
+  Blocks(float x, float y)
   {
-    rect(x,y,200,100);
+    //fill(255,3,3);
+    //rect(x,y,200,100);
+    //move();
+    xpos = x;
+    ypos = y;
+  }
+  void create()
+  {
+    fill(255,3,3);
+    rect(xpos,ypos,200,100);
+    ypos = ypos + 5;
   }
 }
