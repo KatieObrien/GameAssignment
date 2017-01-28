@@ -33,15 +33,19 @@ void draw()
   rect(10,600,20,120);
   rect(470,600,20,120);
   
+  /*
   //Car
   fill(252,251,207);
   ellipse(ex1,625,20,20);
   ellipse(ex2,625,20,20);
   fill(255,7,3);
   rect(x,620,90,100);
+  */
   
   car.create();
- 
+  car.move();
+
+ /*
  //Move car left 
  if(mouseX <= 200)
  {
@@ -57,6 +61,7 @@ void draw()
    ex1 = ex1 + 3;
    ex2 = ex2 + 3;
  }
+ */
  
    //Move white middle stripes
    y1++;
