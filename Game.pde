@@ -1,4 +1,4 @@
-Blocks b1 = new Blocks();
+Blocks b1 = new Blocks(20,-120); 
 
 void setup()
 {
@@ -32,16 +32,16 @@ void draw()
   
  if(mouseX <= 200)
  {
-   x--;
-   ex1--;
-   ex2--;
+   x = x - 3;
+   ex1 = ex1 - 3;
+   ex2 = ex2 - 3;
  }
  
  if(mouseX >= 300)
  {
-   x++;
-   ex1++;
-   ex2++;
+   x = x + 3;
+   ex1 = ex1 + 3;
+   ex2 = ex2 + 3;
  }
  
    y1++;
@@ -66,5 +66,5 @@ void draw()
   textSize(20);
   text (score,450,20);
   
-  b1.blocks(20,-150);
+  b1.create();
 }
