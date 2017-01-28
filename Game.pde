@@ -1,3 +1,5 @@
+Car car = new Car(210);
+
 Blocks b1 = new Blocks(20,-120); 
 BadBlocks bb1 = new BadBlocks(400,-170);
 
@@ -37,6 +39,8 @@ void draw()
   ellipse(ex2,625,20,20);
   fill(255,7,3);
   rect(x,620,90,100);
+  
+  car.create();
  
  //Move car left 
  if(mouseX <= 200)
