@@ -78,5 +78,6 @@ void draw()
   textSize(20);
   text (score,450,20);
   
+  //Blocks implemented
   b1.create();
 }
