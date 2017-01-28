@@ -7,8 +7,10 @@ class Car
   {
     xpos = x;
   }
+  
   void create()
   {
+    //Car shape
     fill(252,251,207);
     ellipse(xpos+20,625,20,20);
     ellipse(xpos+70,625,20,20);
@@ -29,6 +31,7 @@ class Car
      xpos = xpos + 3;
    }
   }
+  
   void score()
   {
     //Score doesn't go up if car isn't on screen
