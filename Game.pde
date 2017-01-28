@@ -1,4 +1,5 @@
 Blocks b1 = new Blocks(20,-120); 
+BadBlocks bb1 = new BadBlocks(400,-170);
 
 void setup()
 {
@@ -80,4 +81,6 @@ void draw()
   
   //Blocks implemented
   b1.create();
+  //BadBlocks implemented
+  bb1.create();
 }
