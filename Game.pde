@@ -6,7 +6,6 @@ BadBlocks bb1 = new BadBlocks(400,-170);
 void setup()
 {
   size(500,700);
-  
 }
 
 float y1=600,y2=680;
