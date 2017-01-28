@@ -14,4 +14,18 @@ class Car
     fill(255,7,3);
     rect(xpos,620,90,100);
   }
+  void move()
+  {
+    //Move car left
+    if(mouseX <= 200)
+    {
+       xpos = xpos - 3;
+    }
+ 
+   //Move car right
+   if(mouseX >= 300)
+   {
+     xpos = xpos + 3;
+   }
+  }
 }
