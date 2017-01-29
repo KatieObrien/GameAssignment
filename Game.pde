@@ -1,10 +1,9 @@
-Stripes s1 = new Stripes(20);
-Stripes s2 = new Stripes(120);
-Stripes s3 = new Stripes(220);
-Stripes s4 = new Stripes(320);
-Stripes s5 = new Stripes(420);
-Stripes s6 = new Stripes(520);
-Stripes s7 = new Stripes(620);
+Stripes s1 = new Stripes(0);
+Stripes s2 = new Stripes(150);
+Stripes s3 = new Stripes(300);
+Stripes s4 = new Stripes(450);
+Stripes s5 = new Stripes(600);
+Stripes s6 = new Stripes(-150);
 
 Car car = new Car(210);
 
@@ -50,8 +49,8 @@ void draw()
   s5.move();
   s6.create();
   s6.move();
-  s7.create();
-  s7.move();
+ // s7.create();
+  //s7.move();
   
   //Car
   car.create();
