@@ -1,4 +1,7 @@
+
 Car car = new Car(210);
+
+
 
 Blocks b1 = new Blocks(20,-120); 
 BadBlocks bb1 = new BadBlocks(400,-170);
@@ -14,17 +17,18 @@ int score;
 void draw()
 {
   //Background
-  background(139,201,250);
+  background(113,112,112);
   noStroke();
   
   //Road
-  fill(113,112,112);
-  rect(-20,600,530,700);
+  //fill(113,112,112);
+  //rect(-20,600,530,700);
+  //Middle stripes
+  //rect(240,y1,20,45);
+  //rect(240,y2,20,45);
+  
   //White stripes
   fill(255);
-  //Middle stripes
-  rect(240,y1,20,45);
-  rect(240,y2,20,45);
   //Side stripes
   rect(10,600,20,120);
   rect(470,600,20,120);
@@ -35,9 +39,10 @@ void draw()
   car.score();
  
    //Move white middle stripes
-   y1++;
-   y2++;
+   //y1++;
+   //y2++;
    
+   /*
   //Bring stripes back to top of road 
    if(y1>=750)
    {
@@ -47,6 +52,7 @@ void draw()
    {
      y2 = 598;
    }
+   */
   
   //Blocks implemented
   b1.create();
