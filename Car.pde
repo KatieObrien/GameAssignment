@@ -43,6 +43,6 @@ class Car
     //Score printed on screen
     fill(255);
     textSize(20);
-    text (score,450,20);
+    text (score,440,20);
   }
 }
