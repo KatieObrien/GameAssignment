@@ -10,7 +10,8 @@ class Stripes
   
   void create()
   {
-    rect(240,ypos,20,45);
+    fill(255);
+    rect(240,ypos,20,75);
   }
   
   void move()
@@ -21,7 +22,7 @@ class Stripes
     //Bring stripe back to top of road 
     if(ypos>=750)
     {
-      ypos = -50;
+      ypos = -150;
      }
   }
 }
