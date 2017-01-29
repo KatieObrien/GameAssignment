@@ -15,9 +15,6 @@ void setup()
   size(500,700);
 }
 
-//float y1=600,y2=680;
-int score;
-
 void draw()
 {
   //Background
@@ -43,6 +40,9 @@ void draw()
   s5.move();
   s6.create();
   s6.move();
+  
+  fill(0);
+  rect(430,-3,90,28);
   
   //Car
   car.create();
