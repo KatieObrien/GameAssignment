@@ -8,7 +8,7 @@ Stripes s6 = new Stripes(-150);
 Car car = new Car(210);
 
 //Blocks b1 = new Blocks(20,-120); 
-//BadBlocks bb1 = new BadBlocks(400,-170);
+BadBlocks bb1 = new BadBlocks(400,-170);
 
 void setup()
 {
@@ -52,5 +52,6 @@ void draw()
   //Blocks implemented
   //b1.create();
   //BadBlocks implemented
-  //bb1.create();
+  bb1.create();
+  
 }
