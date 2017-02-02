@@ -45,4 +45,5 @@ class Car
     textSize(20);
     text (score,440,20);
   }
+  
 }
