@@ -17,7 +17,7 @@ void setup()
 
 void draw()
 {
-  //Background
+    //Background
   background(113,112,112);
   noStroke();
   
@@ -44,10 +44,6 @@ void draw()
   fill(0);
   rect(430,-3,90,28);
   
-  //if(car.xpos >= bb1.xpos && car.ypos >= bb1.ypos)
-  //{
-  //}
-  
   //Car
   car.create();
   car.move();
@@ -58,5 +54,23 @@ void draw()
   //BadBlocks implemented
   bb1.create();
   bb1.move();
+  bb1.ypos = bb1.ypos + 2;
+  
+  if(bb1.xpos  >= car.xpos && bb1.xpos <= car.xpos + 90 && 
+  bb1.ypos >= car.ypos && bb1.ypos <= car.ypos + 100)
+  {
+    background(0);
+    text("GAME OVER",200,250);
+    car.xpos = -200;
+    car.ypos = -200;
+    bb1.xpos = -200;
+    bb1.ypos = -200;
+  }
+  else
+  {
+  }
+  
+  
+  
   
 }
