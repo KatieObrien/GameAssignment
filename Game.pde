@@ -53,5 +53,6 @@ void draw()
   //b1.create();
   //BadBlocks implemented
   bb1.create();
+  bb1.move();
   
 }
