@@ -44,6 +44,10 @@ void draw()
   fill(0);
   rect(430,-3,90,28);
   
+  //if(car.xpos >= bb1.xpos && car.ypos >= bb1.ypos)
+  //{
+  //}
+  
   //Car
   car.create();
   car.move();
