@@ -1,7 +1,7 @@
 class Car
 {
   float xpos;
-  int score;
+  float ypos = 620;
   
   Car(float x)
   {
@@ -15,7 +15,7 @@ class Car
     ellipse(xpos+20,625,20,20);
     ellipse(xpos+70,625,20,20);
     fill(255,7,3);
-    rect(xpos,620,90,100);
+    rect(xpos,ypos,90,100);
   }
   void move()
   {
@@ -30,20 +30,6 @@ class Car
    {
      xpos = xpos + 3;
    }
-  }
-  
-  void score()
-  {
-    //Score doesn't go up if car isn't on screen
-    if(xpos >=0 &&  xpos <= 480)
-    {
-      score += 1;
-    }
-    
-    //Score printed on screen
-    fill(255);
-    textSize(20);
-    text (score,440,20);
   }
   
 }

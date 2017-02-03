@@ -7,13 +7,15 @@ Stripes s6 = new Stripes(-150);
 
 Car car = new Car(210);
 
-//Blocks b1 = new Blocks(20,-120); 
+Blocks b1 = new Blocks(20,-120); 
 BadBlocks bb1 = new BadBlocks(400,-170);
 
 void setup()
 {
   size(500,700);
 }
+
+int score;
 
 void draw()
 {
@@ -44,13 +46,19 @@ void draw()
   fill(0);
   rect(430,-3,90,28);
   
+  fill(255);
+  textSize(20);
+  text (score,440,20);
+  
   //Car
   car.create();
   car.move();
-  car.score();
   
   //Blocks implemented
-  //b1.create();
+  b1.create();
+  b1.move();
+  b1.ypos = b1.ypos + 5;
+  
   //BadBlocks implemented
   bb1.create();
   bb1.move();
@@ -66,11 +74,12 @@ void draw()
     bb1.xpos = -200;
     bb1.ypos = -200;
   }
-  else
+  
+  if(b1.xpos  >= car.xpos && b1.xpos <= car.xpos + 90 && 
+  b1.ypos >= car.ypos && b1.ypos <= car.ypos + 100)
   {
+    score = score + 100;
+    b1.ypos = - 200;
   }
-  
-  
-  
   
 }

@@ -10,7 +10,13 @@ class Blocks
   void create()
   {
     fill(255,3,3);
-    rect(xpos,ypos,200,100);
-    ypos = ypos + 5;
+    rect(xpos,ypos,50,50);
+  }
+  void move()
+  {
+    if(ypos > height)
+    {
+      ypos = - 120;
+    }
   }
 }
