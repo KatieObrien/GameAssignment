@@ -23,12 +23,20 @@ class Car
     if(mouseX <= 200)
     {
        xpos = xpos - 3;
+       if(xpos <= 0)
+       {
+         xpos = xpos + 3;
+       }
     }
  
    //Move car right
    if(mouseX >= 300)
    {
      xpos = xpos + 3;
+     if(xpos >= 410 )
+     {
+       xpos = xpos - 3;
+     }
    }
   }
   
