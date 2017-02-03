@@ -10,9 +10,12 @@ class BadBlocks
   
   void create()
   {
-    fill(255,3,3);
-    point(xpos+100,ypos+50);
-    rect(xpos,ypos,200,100);
+    fill(0);
+    noStroke();
+    ellipse(xpos,ypos,30,30);
+    rect(xpos-2.5,ypos-23,5,20);
+    fill(255,0,0);
+    rect(xpos-3,ypos-23,5.5,3);
   }
   
   void move()
