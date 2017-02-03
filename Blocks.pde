@@ -9,8 +9,10 @@ class Blocks
   }
   void create()
   {
-    fill(255,3,3);
-    rect(xpos,ypos,50,50);
+    //fill(255,3,3);
+    //rect(xpos,ypos,50,50);
+    fill(224,218,18);
+    ellipse(xpos,ypos,40,40);
   }
   void move()
   {

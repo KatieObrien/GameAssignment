@@ -2,13 +2,14 @@ Stripes s1 = new Stripes(0);
 Stripes s2 = new Stripes(150);
 Stripes s3 = new Stripes(300);
 Stripes s4 = new Stripes(450);
-Stripes s5 = new Stripes(600);
+Stripes s5 
+= new Stripes(600);
 Stripes s6 = new Stripes(-150);
 
 Car car = new Car(210);
 
 Blocks b1 = new Blocks(20,-120); 
-BadBlocks bb1 = new BadBlocks(400,-170);
+BadBlocks bb1 = new BadBlocks(380,-170);
 
 void setup()
 {
@@ -16,6 +17,7 @@ void setup()
 }
 
 int score;
+float x = 20;
 
 void draw()
 {
@@ -80,6 +82,15 @@ void draw()
   {
     score = score + 100;
     b1.ypos = - 200;
+    if(x >= 20 && x <= 490)
+    {
+    b1.xpos = random(random(b1.xpos));
+    }
+    else
+    {
+      x = 30 ;
+    }
+    
   }
   
 }
