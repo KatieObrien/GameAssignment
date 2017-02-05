@@ -2,6 +2,7 @@ class Stripes
 {
   
   float ypos;
+  int count = 0;
   
   Stripes(float y)
   {
@@ -23,6 +24,7 @@ class Stripes
     if(ypos>=750)
     {
       ypos = -150;
+      count ++;
      }
   }
 }

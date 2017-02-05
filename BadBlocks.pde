@@ -1,10 +1,11 @@
 class BadBlocks
 {
+  PVector position;
   float xpos,ypos;
   
-  BadBlocks(float x, float y)
+  BadBlocks(float y)
   {
-    xpos = x;
+    xpos = random(30,width-30);
     ypos = y;
   }
   
