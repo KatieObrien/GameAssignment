@@ -51,6 +51,7 @@ int score;
 int count = 0;
 
 float x1 = -650, x2 = -380, x3 = -100;
+float xx1 = -650, xx2 = -380, xx3 = -100;
 
 //To change start page
 void keyPressed()
@@ -92,10 +93,12 @@ void draw()
     x2 = x2 + 1;
     x3 = x3 + 1;
   }
-  if(x1 >= 400)
+  if(x1 >= 350)
   {
     x1 = x1 -1;
-    text("PRESS SPACE TO START",170,250);
+    font = loadFont("Avenir-BlackOblique-40.vlw");
+    textFont(font);
+    text("PRESS SPACE TO START",20,290);
   }
   
   if(checkKey(' '))
@@ -271,23 +274,27 @@ void draw()
   rect(425,505,100,20);
   //Bomb
   fill(0);
-  rect(380,390,40,40);
+  noStroke();
+  ellipse(380,390,30,30);
+  rect(380-2.5,390-23,5,20);
+  fill(255,0,0);
+  rect(380-3,390-23,5.5,3);
   
   noStroke();
   fill(0);
   
-  shape(carr,x1,0);
+  shape(carr,xx1,0);
   
-  ellipse(x2,390,80,80);
-  ellipse(x3,390,80,80);
+  ellipse(xx2,390,80,80);
+  ellipse(xx3,390,80,80);
  
   for(int i = 0; i <5; i++)
   {
-    x1 = x1 + 1;
-    x2 = x2 + 1;
-    x3 = x3 + 1;
+    xx1 = xx1 + 1;
+    xx2 = xx2 + 1;
+    xx3 = xx3 + 1;
   }
-  if(x1 >= -150)
+  if(xx1 >= -150)
   {
     background(255,0,0);
     font = loadFont("Avenir-BlackOblique-70.vlw");
