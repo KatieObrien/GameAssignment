@@ -10,7 +10,7 @@ class Power
   {
     stroke(0);
     fill(15,40,250);
-    ellipse(pos.x,pos.y,40,40);
+    image(cherry,pos.x-43,pos.y-40,80,80);
   }
   void move()
   {

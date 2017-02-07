@@ -32,14 +32,18 @@ Power p1 = new Power(95,-820);
 boolean[]keys = new boolean[1000];
 PShape carr;
 PFont font;
-PImage img;
+PImage sign;
+PImage cherry;
+PImage bomb;
 
 void setup()
 {
   size(500,700);
   
   
-  img = loadImage("DSIGN.png");
+  sign = loadImage("DSIGN.png");
+  cherry = loadImage("CHERRU.png");
+  bomb = loadImage("bomb.png");
     
   carr = createShape();
   carr.beginShape();
@@ -337,12 +341,7 @@ void draw()
   rect(425,505,100,20);
   
   //Bomb
-  fill(0);
-  noStroke();
-  ellipse(380,390,30,30);
-  rect(380-2.5,390-23,5,20);
-  fill(255,0,0);
-  rect(380-3,390-23,5.5,3);
+  image(bomb,340,350,80,80);
   
   noStroke();
   fill(0);

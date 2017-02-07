@@ -14,7 +14,7 @@ class Blocks
     stroke(0);
     fill(224,218,18);
     ellipse(pos.x,pos.y,40,40);
-    image(img,pos.x-28,pos.y-28,60,60);
+    image(sign,pos.x-28,pos.y-28,60,60);
   }
   
   void move()
