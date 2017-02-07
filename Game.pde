@@ -21,6 +21,8 @@ Blocks b8 = new Blocks(380,-720);
 
 //BOMBS
 BadBlocks bb1 = new BadBlocks(300,-170);
+BadBlocks bb2 = new BadBlocks(200,-170);
+BadBlocks bb3 = new BadBlocks(400,-170);
 
 void setup()
 {
@@ -28,7 +30,9 @@ void setup()
 }
 
 int score;
-float x = 20;
+//float x = 20;
+int count = 0;
+
 
 void draw()
 {
@@ -89,17 +93,51 @@ void draw()
   bb1.create();
   bb1.move();
   
-  if(bb1.pos.x  >= car.xpos && bb1.pos.x <= car.xpos + 90 && 
-  bb1.pos.y >= car.ypos && bb1.pos.y <= car.ypos + 100)
+  if(bb1.xpos  >= car.xpos && bb1.xpos <= car.xpos + 90 && 
+  bb1.ypos >= car.ypos && bb1.ypos <= car.ypos + 100)
   {
-    background(0);
-    text("GAME OVER",200,250);
     car.xpos = -200;
     car.ypos = -200;
-    bb1.pos.x = -200;
-    bb1.pos.y = -200;
+    bb1.xpos = -200;
+    bb1.ypos = -200;
+    count ++;
+  }
+  if(bb2.xpos  >= car.xpos && bb2.xpos <= car.xpos + 90 && 
+  bb2.ypos >= car.ypos && bb2.ypos <= car.ypos + 100)
+  {
+    car.xpos = -200;
+    car.ypos = -200;
+    bb2.xpos = -200;
+    bb2.ypos = -200;
+    count ++;
+  }
+  if(bb3.xpos  >= car.xpos && bb3.xpos <= car.xpos + 90 && 
+  bb3.ypos >= car.ypos && bb3.ypos <= car.ypos + 100)
+  {
+    car.xpos = -200;
+    car.ypos = -200;
+    bb3.xpos = -200;
+    bb3.ypos = -200;
+    count ++;
+  }
+  if(score >= 1000)
+  {
+    bb1.ypos = bb1.ypos + 3;
+    bb2.create();
+    bb2.move();
+    bb2.ypos = bb2.ypos + 3;
+  }
+  if(score >= 2000)
+  {
+    bb1.ypos = bb1.ypos + 3;
+    bb2.ypos = bb2.ypos + 3;
+    bb3.ypos = bb2.ypos + 3;
+    bb3.create();
+    bb3.move();
   }
   
+  
+  //COINSS
   if(b1.pos.x  >= car.xpos && b1.pos.x <= car.xpos + 90 && 
   b1.pos.y >= car.ypos && b1.pos.y <= car.ypos + 100)
   {
@@ -155,6 +193,12 @@ void draw()
     score = score + 100;
     b8.pos.y = - 200;
     b8.pos.x = random(40,width-40);
+  }
+  
+  if(count >= 1)
+  {
+    background(0);
+    text("Game Over",200,340);
   }
   
 }

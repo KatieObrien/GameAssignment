@@ -1,31 +1,33 @@
 class BadBlocks
 {
-  PVector pos;
+  //PVector pos;
+  float xpos,ypos;
   
   BadBlocks(float x, float y)
   {
-    pos = new PVector(x,y);
-    
+    //pos = new PVector(x,y);
+    xpos = x;
+    ypos = y;
   }
   
   void create()
   {
     fill(0);
     noStroke();
-    ellipse(pos.x,pos.y,30,30);
-    rect(pos.x-2.5,pos.y-23,5,20);
+    ellipse(xpos,ypos,30,30);
+    rect(xpos-2.5,ypos-23,5,20);
     fill(255,0,0);
-    rect(pos.x-3,pos.y-23,5.5,3);
+    rect(xpos-3,ypos-23,5.5,3);
   }
   
   void move()
   {
-    bb1.pos.y = bb1.pos.y + 4;
+    ypos = ypos + 4;
     
-    if(pos.y > height)
+    if(ypos > height)
     {
-      pos.y = - 120;
-      pos.x = random(30,width-30);
+      ypos = - 120;
+      xpos = random(30,width-30);
     }
   }
 }
