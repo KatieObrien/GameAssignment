@@ -20,9 +20,14 @@ Blocks b7 = new Blocks(320,-220);
 Blocks b8 = new Blocks(380,-720);
 
 //BOMBS
-BadBlocks bb1 = new BadBlocks(300,-170);
-BadBlocks bb2 = new BadBlocks(200,-170);
-BadBlocks bb3 = new BadBlocks(400,-170);
+BadBlocks bb1 = new BadBlocks(50,-170);
+BadBlocks bb2 = new BadBlocks(150,-170);
+BadBlocks bb3 = new BadBlocks(250,-170);
+BadBlocks bb4 = new BadBlocks(350,-170);
+BadBlocks bb5 = new BadBlocks(450,-170);
+
+//POWERUPS
+Power p1 = new Power(95,-820);
 
 boolean[]keys = new boolean[1000];
 PShape carr;
@@ -163,6 +168,21 @@ void draw()
   bb1.create();
   bb1.move();
   
+  //PowerUP 
+  p1.create();
+  p1.move();
+  
+  if(p1.pos.x  >= car.xpos && p1.pos.x <= car.xpos + 90 && 
+  p1.pos.y >= car.ypos && p1.pos.y <= car.ypos + 100)
+  {
+    p1.pos.y = -200;
+    score = score + 150;
+    bb1.ypos = - 300;
+    bb2.ypos = - 500;
+    bb3.ypos = - 600;
+  }
+  
+  
   if(bb1.xpos  >= car.xpos && bb1.xpos <= car.xpos + 90 && 
   bb1.ypos >= car.ypos && bb1.ypos <= car.ypos + 100)
   {
@@ -190,20 +210,57 @@ void draw()
     bb3.ypos = -200;
     count ++;
   }
+  if(bb4.xpos  >= car.xpos && bb4.xpos <= car.xpos + 90 && 
+  bb4.ypos >= car.ypos && bb4.ypos <= car.ypos + 100)
+  {
+    car.xpos = -200;
+    car.ypos = -200;
+    bb4.xpos = -200;
+    bb4.ypos = -200;
+    count ++;
+  }
+  if(bb5.xpos  >= car.xpos && bb5.xpos <= car.xpos + 90 && 
+  bb5.ypos >= car.ypos && bb5.ypos <= car.ypos + 100)
+  {
+    car.xpos = -200;
+    car.ypos = -200;
+    bb5.xpos = -200;
+    bb5.ypos = -200;
+    count ++;
+  }
+  if(score >= 500)
+  {
+    bb1.ypos = bb1.ypos + 3;
+    bb2.ypos = bb2.ypos + 3;
+    bb2.create();
+    bb2.move();
+  }
   if(score >= 1000)
   {
     bb1.ypos = bb1.ypos + 3;
-    bb2.create();
-    bb2.move();
     bb2.ypos = bb2.ypos + 3;
+    bb3.ypos = bb3.ypos + 3;
+    bb3.create();
+    bb3.move();
+  }
+  if(score >= 1500)
+  {
+    bb1.ypos = bb1.ypos + 3;
+    bb2.ypos = bb2.ypos + 3;
+    bb3.ypos = bb3.ypos + 3;
+    bb4.ypos = bb4.ypos + 3;
+    bb4.create();
+    bb4.move();
   }
   if(score >= 2000)
   {
     bb1.ypos = bb1.ypos + 3;
     bb2.ypos = bb2.ypos + 3;
-    bb3.ypos = bb2.ypos + 3;
-    bb3.create();
-    bb3.move();
+    bb3.ypos = bb3.ypos + 3;
+    bb4.ypos = bb4.ypos + 3;
+    bb5.ypos = bb5.ypos + 3;
+    bb5.create();
+    bb5.move();
   }
   
   
