@@ -49,6 +49,8 @@ void setup()
 
 int score;
 int count = 0;
+int count2 = 0;
+int w = 20,e = 20;
 
 float x1 = -650, x2 = -380, x3 = -100;
 float xx1 = -650, xx2 = -380, xx3 = -100;
@@ -272,6 +274,7 @@ void draw()
   rect(25,505,100,20);
   rect(225,505,100,20);
   rect(425,505,100,20);
+  
   //Bomb
   fill(0);
   noStroke();
@@ -300,6 +303,26 @@ void draw()
     font = loadFont("Avenir-BlackOblique-70.vlw");
     textFont(font);
     text("BOOM",130,350);
+    count2 ++;
+  }
+  if (count2 >= 2)
+  {
+    fill(0);
+    rect(0,-20,w,e);
+    
+    if(w < width)
+    {
+      w = w + 30;
+    }
+    if(w >= width)
+    {
+      e = e + 10;
+    }
+    if(e >= 750)
+    {
+      fill(255);
+      text("GAME OVER",70,350);
+    }
   }
   }
   }
