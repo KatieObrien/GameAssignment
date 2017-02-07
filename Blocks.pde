@@ -1,20 +1,22 @@
 class Blocks
 {
+  
   PVector pos;
   //float xpos,ypos;
   
   Blocks(float x,float y)
   {
     pos = new PVector (x,y);
-    //xpos = random(40,width-40);
-    //ypos = y;
   }
+  
   void create()
   {
-    //stroke(0);
+    stroke(0);
     fill(224,218,18);
     ellipse(pos.x,pos.y,40,40);
+    image(img,pos.x-28,pos.y-28,60,60);
   }
+  
   void move()
   {
     

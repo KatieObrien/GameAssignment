@@ -32,11 +32,15 @@ Power p1 = new Power(95,-820);
 boolean[]keys = new boolean[1000];
 PShape carr;
 PFont font;
+PImage img;
 
 void setup()
 {
   size(500,700);
   
+  
+  img = loadImage("DSIGN.png");
+    
   carr = createShape();
   carr.beginShape();
   carr.fill(255,7,3);

@@ -8,6 +8,7 @@ class Power
   }
   void create()
   {
+    stroke(0);
     fill(15,40,250);
     ellipse(pos.x,pos.y,40,40);
   }
