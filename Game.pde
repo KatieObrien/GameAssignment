@@ -321,7 +321,7 @@ void draw()
     if(e >= 750)
     {
       fill(255);
-      text("GAME OVER",70,350);
+      text("GAME OVER",30,350);
     }
   }
   }
