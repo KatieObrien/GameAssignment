@@ -1,27 +1,29 @@
 class Blocks
 {
-  float xpos,ypos;
+  PVector pos;
+  //float xpos,ypos;
   
-  Blocks(float y)
+  Blocks(float x,float y)
   {
-    xpos = random(40,width-40);
-    ypos = y;
+    pos = new PVector (x,y);
+    //xpos = random(40,width-40);
+    //ypos = y;
   }
   void create()
   {
     //stroke(0);
     fill(224,218,18);
-    ellipse(xpos,ypos,40,40);
+    ellipse(pos.x,pos.y,40,40);
   }
   void move()
   {
     
-    b1.ypos = b1.ypos + 5;
+    pos.y = pos.y + 5;
   
-    if(ypos > height)
+    if(pos.y > height)
     {
-      ypos = - 120;
-      xpos = random(40,width-40);
+      pos.y = - 120;
+      pos.x = random(40,width-40);
     }
   }
 }
