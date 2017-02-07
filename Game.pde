@@ -24,18 +24,83 @@ BadBlocks bb1 = new BadBlocks(300,-170);
 BadBlocks bb2 = new BadBlocks(200,-170);
 BadBlocks bb3 = new BadBlocks(400,-170);
 
+boolean[]keys = new boolean[1000];
+PShape carr;
+PFont font;
+
 void setup()
 {
   size(500,700);
+  
+  carr = createShape();
+  carr.beginShape();
+  carr.fill(255,7,3);
+  carr.noStroke();
+  carr.vertex(170, 280);
+  carr.vertex(170, 400);
+  carr.vertex(630, 400);
+  carr.vertex(630, 280);
+  carr.vertex(550, 280);
+  carr.vertex(550, 190);
+  carr.vertex(250, 190);
+  carr.vertex(250, 280);
+  carr.endShape(CLOSE);
 }
 
 int score;
-//float x = 20;
 int count = 0;
+
+float x1 = -650, x2 = -380, x3 = -100;
+
+//To change start page
+void keyPressed()
+{
+  keys[keyCode]=true;
+}
+
+boolean checkKey(int k)
+{
+  if(keys.length >= k)
+  {
+    return keys[k] || keys[Character.toUpperCase(k)];
+  }
+  return false;
+}
 
 
 void draw()
 {
+    background(113,112,112);
+  fill(139,201,250);
+  rect(0,0,550,350);
+  fill(255);
+  rect(25,505,100,20);
+  rect(225,505,100,20);
+  rect(425,505,100,20);
+  
+  noStroke();
+  fill(0);
+  
+  shape(carr,x1,0);
+  
+  ellipse(x2,390,80,80);
+  ellipse(x3,390,80,80);
+ 
+  for(int i = 0; i <5; i++)
+  {
+    x1 = x1 + 1;
+    x2 = x2 + 1;
+    x3 = x3 + 1;
+  }
+  if(x1 >= 400)
+  {
+    x1 = x1 -1;
+    text("PRESS SPACE TO START",170,250);
+  }
+  
+  if(checkKey(' '))
+  {
+    clear();
     //Background
   background(113,112,112);
   noStroke();
@@ -199,6 +264,7 @@ void draw()
   {
     background(0);
     text("Game Over",200,340);
+  }
   }
   
 }
