@@ -35,6 +35,7 @@ PFont font;
 PImage sign;
 PImage cherry;
 PImage bomb;
+PImage coin;
 
 void setup()
 {
@@ -44,6 +45,7 @@ void setup()
   sign = loadImage("DSIGN.png");
   cherry = loadImage("CHERRU.png");
   bomb = loadImage("bomb.png");
+  coin = loadImage("Coin.png");
     
   carr = createShape();
   carr.beginShape();

@@ -11,10 +11,7 @@ class Blocks
   
   void create()
   {
-    stroke(0);
-    fill(224,218,18);
-    ellipse(pos.x,pos.y,40,40);
-    image(sign,pos.x-28,pos.y-28,60,60);
+    image(coin,pos.x-30,pos.y-30,65,65);
   }
   
   void move()
