@@ -16,6 +16,8 @@ game is over.
 The start of the game opens with a small scene of a car drving by, once you hit a bomb in the game you are brought back to 
 the same car screen but a bomb has now been placed in the path of the car. Once the car reaches the bomb the screen "blows up" 
 and the game over screen is brought up.
+I created my animations with the piskelapp.com so I drew the cherries, bombs and coins with this online app.
+I used bensound.com and SoundBible.com for the sounds used in my game.
 
 Game Instructions:                                                                                             
 Once the opening scene has ended you must press the space bar to launch the game screen. 
