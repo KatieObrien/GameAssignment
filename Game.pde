@@ -42,7 +42,8 @@ import ddf.minim.*;
 Minim minim;
 AudioPlayer mainsong;
 AudioPlayer bombsong;
-
+AudioPlayer powersong;
+AudioPlayer coinsong;
 
 void setup()
 {
@@ -51,6 +52,8 @@ void setup()
   minim = new Minim(this);
   mainsong = minim.loadFile("mainsong.mp3");
   bombsong = minim.loadFile("Bomb.mp3");
+  powersong = minim.loadFile("PowerUpsound.mp3");
+  coinsong = minim.loadFile("Coinsound.mp3");
   
   
   sign = loadImage("DSIGN.png");
@@ -204,11 +207,13 @@ void draw()
   if(p1.pos.x  >= car.xpos && p1.pos.x <= car.xpos + 90 && 
   p1.pos.y >= car.ypos && p1.pos.y <= car.ypos + 100)
   {
+    powersong.play();
     p1.pos.y = -200;
     score = score + 150;
     bb1.ypos = - 300;
     bb2.ypos = - 500;
     bb3.ypos = - 600;
+    powersong.rewind();
   }
   
   
@@ -300,6 +305,9 @@ void draw()
     score = score + 100;
     b1.pos.y = - 200;
     b1.pos.x = random(40,width-40);
+    coinsong.rewind();
+    coinsong.play();
+    
   }
   if(b2.pos.x  >= car.xpos && b2.pos.x <= car.xpos + 90 && 
   b2.pos.y >= car.ypos && b2.pos.y <= car.ypos + 100)
@@ -307,6 +315,8 @@ void draw()
     score = score + 100;
     b2.pos.y = - 200;
     b2.pos.x = random(40,width-40);
+    coinsong.rewind();
+    coinsong.play();
   }
   if(b3.pos.x  >= car.xpos && b3.pos.x <= car.xpos + 90 && 
   b3.pos.y >= car.ypos && b3.pos.y <= car.ypos + 100)
@@ -314,6 +324,8 @@ void draw()
     score = score + 100;
     b3.pos.y = - 200;
     b3.pos.x = random(40,width-40);
+    coinsong.rewind();
+    coinsong.play();
   }
   if(b4.pos.x  >= car.xpos && b4.pos.x <= car.xpos + 90 && 
   b4.pos.y >= car.ypos && b4.pos.y <= car.ypos + 100)
@@ -321,6 +333,8 @@ void draw()
     score = score + 100;
     b4.pos.y = - 200;
     b4.pos.x = random(40,width-40);
+    coinsong.rewind();
+    coinsong.play();
   }
   if(b5.pos.x  >= car.xpos && b5.pos.x <= car.xpos + 90 && 
   b5.pos.y >= car.ypos && b5.pos.y <= car.ypos + 100)
@@ -328,6 +342,8 @@ void draw()
     score = score + 100;
     b5.pos.y = - 200;
     b5.pos.x = random(40,width-40);
+    coinsong.rewind();
+    coinsong.play();
   }
   if(b6.pos.x  >= car.xpos && b6.pos.x <= car.xpos + 90 && 
   b6.pos.y >= car.ypos && b6.pos.y <= car.ypos + 100)
@@ -335,6 +351,8 @@ void draw()
     score = score + 100;
     b6.pos.y = - 200;
     b6.pos.x = random(40,width-40);
+    coinsong.rewind();
+    coinsong.play();
   }
   if(b7.pos.x  >= car.xpos && b7.pos.x <= car.xpos + 90 && 
   b7.pos.y >= car.ypos && b7.pos.y <= car.ypos + 100)
@@ -342,6 +360,8 @@ void draw()
     score = score + 100;
     b7.pos.y = - 200;
     b7.pos.x = random(40,width-40);
+    coinsong.rewind();
+    coinsong.play();
   }
   if(b8.pos.x  >= car.xpos && b8.pos.x <= car.xpos + 90 && 
   b8.pos.y >= car.ypos && b8.pos.y <= car.ypos + 100)
@@ -349,68 +369,69 @@ void draw()
     score = score + 100;
     b8.pos.y = - 200;
     b8.pos.x = random(40,width-40);
+    coinsong.rewind();
+    coinsong.play();
   }
   
   if(count >= 1)
   {
-    //mainsong.();
     noStroke();
     background(113,112,112);
-  fill(139,201,250);
-  rect(0,0,550,350);
-  fill(255);
-  rect(25,505,100,20);
-  rect(225,505,100,20);
-  rect(425,505,100,20);
-  
-  //Bomb
-  image(bomb,340,350,80,80);
-  
-  noStroke();
-  fill(0);
-  
-  shape(carr,xx1,0);
-  
-  ellipse(xx2,390,80,80);
-  ellipse(xx3,390,80,80);
- 
-  for(int i = 0; i <5; i++)
-  {
-    xx1 = xx1 + 1;
-    xx2 = xx2 + 1;
-    xx3 = xx3 + 1;
-  }
-  if(xx1 >= -250)
-  {
-    bombsong.play();
-  }
-  if(xx1 >= -150)
-  {
-    background(255,0,0);
-    font = loadFont("Avenir-BlackOblique-70.vlw");
-    textFont(font);
-    text("BOOM",130,350);
-    count2 ++;
-  }
-  if (count2 >= 2)
-  {
-    fill(0);
-    rect(0,-20,w,e);
+    fill(139,201,250);
+    rect(0,0,550,350);
+    fill(255);
+    rect(25,505,100,20);
+    rect(225,505,100,20);
+    rect(425,505,100,20);
     
-    if(w < width)
+    //Bomb
+    image(bomb,340,350,80,80);
+  
+    noStroke();
+    fill(0);
+  
+    shape(carr,xx1,0);
+  
+    ellipse(xx2,390,80,80);
+    ellipse(xx3,390,80,80);
+ 
+    for(int i = 0; i <5; i++)
     {
-      w = w + 30;
+      xx1 = xx1 + 1;
+      xx2 = xx2 + 1;
+      xx3 = xx3 + 1;
     }
-    if(w >= width)
+    if(xx1 >= -250)
     {
-      e = e + 10;
+      bombsong.play();
     }
-    if(e >= 750)
+    if(xx1 >= -150)
     {
-      fill(255);
-      text("GAME OVER",30,350);
+      background(255,0,0);
+      font = loadFont("Avenir-BlackOblique-70.vlw");
+      textFont(font);
+      text("BOOM",130,350);
+      count2 ++;
     }
-  }
+    if (count2 >= 2)
+    {
+      fill(0);
+      rect(0,-20,w,e);
+    
+      if(w < width)
+      {
+        w = w + 30;
+      }
+      if(w >= width)
+      {
+        e = e + 10;
+      }
+      if(e >= 750)
+      {
+        fill(255);
+        text("GAME OVER",30,350);
+      }
+    }
   }
   }
   
