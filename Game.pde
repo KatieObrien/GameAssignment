@@ -37,9 +37,20 @@ PImage cherry;
 PImage bomb;
 PImage coin;
 
+import ddf.minim.*;
+
+Minim minim;
+AudioPlayer mainsong;
+AudioPlayer bombsong;
+
+
 void setup()
 {
   size(500,700);
+  
+  minim = new Minim(this);
+  mainsong = minim.loadFile("mainsong.mp3");
+  bombsong = minim.loadFile("Bomb.mp3");
   
   
   sign = loadImage("DSIGN.png");
@@ -88,6 +99,14 @@ boolean checkKey(int k)
 
 void draw()
 {
+    if(count <= 0)
+    {
+      mainsong.play();
+    }
+    else 
+    {
+      mainsong.pause();
+    }
     background(113,112,112);
   fill(139,201,250);
   rect(0,0,550,350);
@@ -334,6 +353,8 @@ void draw()
   
   if(count >= 1)
   {
+    //mainsong.();
+    noStroke();
     background(113,112,112);
   fill(139,201,250);
   rect(0,0,550,350);
@@ -358,6 +379,10 @@ void draw()
     xx1 = xx1 + 1;
     xx2 = xx2 + 1;
     xx3 = xx3 + 1;
+  }
+  if(xx1 >= -250)
+  {
+    bombsong.play();
   }
   if(xx1 >= -150)
   {
